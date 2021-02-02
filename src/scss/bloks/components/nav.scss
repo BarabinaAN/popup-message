@@ -5,11 +5,12 @@
 }
 .nav-link {
    margin: 0 10px;
+   font-weight: 600;
    &.is-active {
       text-decoration: underline;
    }
    &.is-disable {
-      color: darken($color-active, 15%); 
+      color: rgba($color-active, 0.5); 
       cursor: default;
    }
 }

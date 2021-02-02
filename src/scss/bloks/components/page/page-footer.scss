@@ -1,4 +1,7 @@
 .page-footer {
   background-color: $bg-color-dark;
   padding: 20px 0;
+  &__copyright {
+    color: rgba($color-active, 0.5);
+  }
 }
