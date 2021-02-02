@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background-color: $bg-color-white;
+  font-family: $font-family;
+  color: $color-dark;
+  font-size: 16px;
+  line-height: 1.2;
+}
+h1 {
+  color: $color-dark;
+}
+
+a {
+  text-decoration: none;
+  color: $color-active;
+  &:hover {
+    color: lighten($color-active, 15%);
+  }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.txt-color-active {
+  color: $color-active; 
+}
+
+ol {
+  margin: 30px 0;
+  padding-left: 0;
+  counter-reset: counter;
+  span {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    color: $color-active;
+  }
+  li {
+    position: relative;
+    margin: 15px 0;
+    padding-left: 30px;
+    list-style: none;
+    color: lighten($color-dark, 20%);
+  }
+  li:before {
+    counter-increment: counter;
+    content:counter(counter);
+    color: $color-active;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    text-align: center;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 19px;
+    border-right: 1px solid $color-active;
+    box-sizing: border-box;
+  }
+}
+
+.descr {
+  font-size: 20px;  
+}
+
+.popup {
+  position: fixed;
+  width: 300px;
+  min-height: 300px;
+  right: 0;
+  bottom: 91px;
+  background: $bg-color-dark;
+  max-height: 30vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &__container {
+    padding: 40px 30px;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23d68e4b;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;%7D%3C/style%3E%3C/defs%3E%3Ctitle/%3E%3Cg id='cross'%3E%3Cline class='cls-1' x1='7' x2='25' y1='7' y2='25'/%3E%3Cline class='cls-1' x1='7' x2='25' y1='25' y2='7'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    cursor: pointer;
+    transition: 0.35s transform;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  ol {
+    margin: 0;
+  }
+}
